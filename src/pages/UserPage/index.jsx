@@ -1,5 +1,14 @@
+import UserCard from "../../components/UserCard";
+import { Container } from "./style.js";
+
 const UserPage = () => {
-  return <></>;
+  return (
+    <>
+      <Container>
+        <UserCard />
+      </Container>
+    </>
+  );
 };
 
 export default UserPage;

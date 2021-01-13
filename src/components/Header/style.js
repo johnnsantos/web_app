@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  box-shadow: 1px 1px 5px #4c5557;
+  box-shadow: 1px 1px 5px #d3d3d3;
   margin-bottom: 3vh;
 `;
 
@@ -23,8 +23,6 @@ export const TitleBar = styled.div`
     font-size: 1.2rem;
   }
   a {
-    display: flex;
-    align-items: baseline;
     text-decoration: none;
     outline: none;
   }

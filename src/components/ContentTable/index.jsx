@@ -1,67 +1,69 @@
 import { useSelector } from "react-redux";
-import { StyledTable, Container } from "./style";
+import { TableList } from "./style";
 import { MdFormatListNumbered } from "react-icons/md";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
 import { AiOutlineMail } from "react-icons/ai";
 import { AiOutlineFieldNumber } from "react-icons/ai";
 import { AiOutlineInteraction } from "react-icons/ai";
+import { useHistory } from "react-router-dom";
 
 const ContentTable = () => {
+  const history = useHistory();
   const { db } = useSelector((state) => state.Users);
 
-  const renderUsers = (user, index) => {
+  const renderUsersList = (user, index) => {
     return (
-      <tr key={index}>
-        <td>{user.id}</td>
-        <td>{user.name.split(" ")[0]}</td>
-        <td>{user.name.split(" ")[1]}</td>
-        <td>{user.email.toLowerCase()}</td>
-        <td>{user.age}</td>
-        <td>
-          <button>
-            Ver mais
+      <ul key={index}>
+        <li data-label="ID">{user.id}</li>
+        <li data-label="Nome">{user.name.split(" ")[0]}</li>
+        <li data-label="Sobrenome">{user.name.split(" ")[1]}</li>
+        <li data-label="E-mail">{user.email.toLowerCase()}</li>
+        <li data-label="Idade">{user.age}</li>
+        <li data-label="Ações">
+          <button onClick={() => history.push(`/user/${user.id}`)}>
+            Ver tudo
             <IoIosArrowDroprightCircle />
           </button>
-        </td>
-      </tr>
+        </li>
+      </ul>
     );
   };
 
   return (
-    <Container>
-      <StyledTable>
-        <thead>
-          <tr>
-            <th>
+    <>
+      <TableList>
+        <div className="list">
+          <ul>
+            <li>
               <MdFormatListNumbered />
               ID
-            </th>
-            <th>
+            </li>
+            <li>
               <BiUserCircle />
               Nome
-            </th>
-            <th>
+            </li>
+            <li>
               <BiUserCircle />
               Sobrenome
-            </th>
-            <th>
+            </li>
+            <li>
               <AiOutlineMail />
               Email
-            </th>
-            <th>
+            </li>
+            <li>
               <AiOutlineFieldNumber />
               Idade
-            </th>
-            <th>
+            </li>
+            <li>
               <AiOutlineInteraction />
               Ações
-            </th>
-          </tr>
-        </thead>
-        <tbody>{db.map(renderUsers)}</tbody>
-      </StyledTable>
-    </Container>
+            </li>
+          </ul>
+          {db.map(renderUsersList)}
+        </div>
+      </TableList>
+    </>
   );
 };
 
