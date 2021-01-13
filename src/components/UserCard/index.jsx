@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 const UserCard = () => {
   const history = useHistory();
   const user = useSelector((state) => state.GetUser);
-  console.log(user);
+
   const { id, name, age, email, address, phone, website, company } = user;
 
   return (

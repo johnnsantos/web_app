@@ -27,4 +27,15 @@ export const Commander = styled.div`
     color: #4c5557;
     transition: all 0.3s ease-in-out;
   }
+
+  .disable {
+    border: 1px solid #899092;
+    color: #8d9394;
+    cursor: auto;
+  }
+
+  .disable:hover {
+    background-color: transparent;
+    color: #8d9394;
+  }
 `;
