@@ -10,7 +10,7 @@ const Routes = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(handleUsersThunk());
+    dispatch(handleUsersThunk(1));
   }, []);
 
   return (

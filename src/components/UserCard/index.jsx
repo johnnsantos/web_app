@@ -12,10 +12,12 @@ import { useHistory } from "react-router-dom";
 const UserCard = () => {
   const history = useHistory();
   const user = useSelector((state) => state.GetUser);
+  console.log(user);
   const { id, name, age, email, address, phone, website, company } = user;
+
   return (
     <MainCard>
-      {user && (
+      {user !== [] && (
         <>
           <div className="header">
             <div className="button-area">
@@ -42,7 +44,7 @@ const UserCard = () => {
               </li>
               <li>
                 <GrLocation />
-                Cidade: {address.city}
+                Cidade: {address?.city}
               </li>
               <li>
                 <AiOutlinePhone />
@@ -54,7 +56,7 @@ const UserCard = () => {
               </li>
               <li>
                 <IoBusinessOutline />
-                Empresa: {company && company.name}
+                Empresa: {company?.name}
               </li>
             </ul>
           </div>
