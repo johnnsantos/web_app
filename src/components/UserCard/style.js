@@ -13,7 +13,7 @@ export const MainCard = styled.div`
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     img {
       margin-right: 20px;
       width: 10%;
@@ -24,6 +24,11 @@ export const MainCard = styled.div`
       font-weight: bold;
     }
   }
+
+  .button-area {
+    width: 35%;
+  }
+
   .contents {
     margin: 5% auto;
     width: 80%;
@@ -49,7 +54,6 @@ export const MainCard = styled.div`
     padding: 5px 10px;
     outline: none;
     background-color: transparent;
-    position: absolute;
     margin: 10px 0 0 10px;
     font-weight: bold;
     svg {
