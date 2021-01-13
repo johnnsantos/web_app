@@ -11,7 +11,7 @@ const Routes = () => {
 
   useEffect(() => {
     dispatch(handleUsersThunk());
-  });
+  }, []);
 
   return (
     <>

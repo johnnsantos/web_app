@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Commander = styled.div`
   margin-top: 15px;
-  width: 50%;
+  width: 70%;
+  max-width: 880px;
   display: flex;
   align-items: center;
   justify-content: space-between;
