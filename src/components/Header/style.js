@@ -9,8 +9,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: 1px 1px 5px #4c5557;
-  position: fixed;
-  top: 0;
+  margin-bottom: 3vh;
 `;
 
 export const TitleBar = styled.div`

@@ -17,12 +17,8 @@ const Routes = () => {
     <>
       <Header />
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/user/:id">
-          <UserPage />
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/user/:id" component={UserPage} />
       </Switch>
     </>
   );

@@ -1,5 +1,7 @@
+import ContentTable from "../../components/ContentTable";
+
 const Home = () => {
-  return <></>;
+  return <ContentTable />;
 };
 
 export default Home;
