@@ -1,12 +1,12 @@
 import { users } from "./types";
 
-const defaultState = { users: [] };
+const defaultState = { db: [] };
 
 const Users = (state = defaultState, action) => {
-  const { list, type } = action;
+  const { type, list } = action;
   switch (type) {
     case users:
-      return { users: [...list] };
+      return { db: [...list] };
 
     default:
       return state;

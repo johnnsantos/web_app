@@ -1,17 +1,9 @@
-import { useSelector } from "react-redux";
+import Routes from "./routes";
 
 const App = () => {
-  const { users } = useSelector((state) => state.Users);
-
   return (
     <>
-      <button
-        onClick={() => {
-          console.log(users);
-        }}
-      >
-        console
-      </button>
+      <Routes />
     </>
   );
 };
