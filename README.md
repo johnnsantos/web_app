@@ -35,3 +35,4 @@ Tecnologias que foram empregadas no projeto:
 - Styled components
 - React Icons
 - React Testing Library
+- Framer motion
