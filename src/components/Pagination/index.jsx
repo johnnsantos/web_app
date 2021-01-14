@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 const Pagination = () => {
-  const page = useSelector((state) => state.getPage);
+  const page = useSelector((state) => state.GetPage);
 
   const dispatch = useDispatch();
 
