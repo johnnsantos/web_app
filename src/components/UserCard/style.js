@@ -4,6 +4,7 @@ export const MainCard = styled.div`
   font-family: "Courier New", Courier, monospace;
   background-color: #f1f1f1;
   width: 60%;
+  max-width: 800px;
   border-radius: 10px;
   box-shadow: 1px 1px 15px #d3d3d3;
 

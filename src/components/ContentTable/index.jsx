@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import { TableList } from "./style";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
 import {
   AiOutlineMail,
@@ -9,31 +9,12 @@ import {
   AiOutlineArrowUp,
   AiOutlineArrowDown,
 } from "react-icons/ai";
-import { useHistory } from "react-router-dom";
-import { useState } from "react";
+import UserList from "../UserList";
 
 const ContentTable = () => {
   const [order, setOrder] = useState(false);
-  const history = useHistory();
-  const { db } = useSelector((state) => state.Users);
 
-  const renderUsersList = (user, index) => {
-    return (
-      <ul key={index}>
-        <li data-label="ID">{user.id}</li>
-        <li data-label="Nome">{user.name.split(" ")[0]}</li>
-        <li data-label="Sobrenome">{user.name.split(" ")[1]}</li>
-        <li data-label="E-mail">{user.email.toLowerCase()}</li>
-        <li data-label="Idade">{user.age}</li>
-        <li data-label="Ações">
-          <button onClick={() => history.push(`/user/${user.id}`)}>
-            Ver tudo
-            <IoIosArrowDroprightCircle />
-          </button>
-        </li>
-      </ul>
-    );
-  };
+  const db = useSelector((state) => state.Users);
 
   return (
     <>
@@ -65,7 +46,11 @@ const ContentTable = () => {
               Ações
             </li>
           </ul>
-          {order ? db.map(renderUsersList).reverse() : db.map(renderUsersList)}
+          {order
+            ? db
+                .map((user, index) => <UserList user={user} key={index} />)
+                .reverse()
+            : db.map((user, index) => <UserList user={user} key={index} />)}
         </div>
       </TableList>
     </>
