@@ -42,4 +42,11 @@ export const Commander = styled.div`
     background-color: transparent;
     color: #8d9394;
   }
+
+  @media only screen and (max-width: 400px) {
+    width: 95%;
+    button {
+      margin-right: 15px;
+    }
+  }
 `;
