@@ -5,7 +5,7 @@ O deploy do json-server foi realizado no heroku na url: [http://fakeapijuit.hero
 
 ### Link de Deploy no Vercel
 
-Para visualizar a aplicação rodando online visite: [https://web-app-ten-xi.vercel.app/](https://web-app-ten-xi.vercel.app/)
+Para visualizar a aplicação rodando online visite: [https://web-app-opal.vercel.app/](https://web-app-opal.vercel.app/)
 
 ## Scripts
 
