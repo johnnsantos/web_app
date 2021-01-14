@@ -6,6 +6,7 @@ import { handleUsersThunk } from "../store/modules/infoUsers/thunks";
 import Header from "../components/Header";
 import Home from "../pages/Home";
 import UserPage from "../pages/UserPage";
+import { AnimatePresence } from "framer-motion";
 
 const Routes = () => {
   const dispatch = useDispatch();
@@ -16,11 +17,13 @@ const Routes = () => {
 
   return (
     <>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/user/:id" component={UserPage} />
-      </Switch>
+      <AnimatePresence key="animates">
+        <Header key="header" />
+        <Switch>
+          <Route exact path="/" component={Home} key="home" />
+          <Route exact path="/user/:id" component={UserPage} key="userpage" />
+        </Switch>
+      </AnimatePresence>
     </>
   );
 };

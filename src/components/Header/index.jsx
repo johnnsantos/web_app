@@ -1,14 +1,13 @@
 import { HeaderContainer, TitleBar } from "./style";
-import { ImUsers } from "react-icons/im";
 import { Link } from "react-router-dom";
+import logo from "../../img/logo.png";
 
 const Header = () => {
   return (
     <HeaderContainer>
       <TitleBar>
         <Link to="/">
-          <ImUsers />
-          UsersList
+          <img src={logo} alt="Logo" />
         </Link>
       </TitleBar>
     </HeaderContainer>
