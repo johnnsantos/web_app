@@ -36,3 +36,4 @@ Tecnologias que foram empregadas no projeto:
 - React Icons
 - React Testing Library
 - Framer motion
+- React Leaflet (map)
