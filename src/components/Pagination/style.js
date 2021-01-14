@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Commander = styled.div`
-  margin-top: 15px;
+  margin: 15px 0 15px;
   width: 70%;
   max-width: 880px;
   display: flex;
@@ -9,6 +9,9 @@ export const Commander = styled.div`
   justify-content: space-between;
 
   button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 5px 10px;
     border: 1px solid #f8b13b;
     border-radius: 3px;
@@ -18,6 +21,7 @@ export const Commander = styled.div`
     font-weight: bold;
     svg {
       margin-left: 3px;
+      margin-right: 3px;
       font-size: 0.9rem;
     }
   }

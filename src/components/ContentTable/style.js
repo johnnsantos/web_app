@@ -22,6 +22,10 @@ export const TableList = styled.div`
     }
   }
 
+  .filter-btn {
+    cursor: pointer;
+  }
+
   button:hover {
     background-color: #f8b13b;
     color: #4c5557;

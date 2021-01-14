@@ -1,14 +1,19 @@
 import { useSelector } from "react-redux";
 import { TableList } from "./style";
-import { MdFormatListNumbered } from "react-icons/md";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
-import { AiOutlineMail } from "react-icons/ai";
-import { AiOutlineFieldNumber } from "react-icons/ai";
-import { AiOutlineInteraction } from "react-icons/ai";
+import {
+  AiOutlineMail,
+  AiOutlineFieldNumber,
+  AiOutlineInteraction,
+  AiOutlineArrowUp,
+  AiOutlineArrowDown,
+} from "react-icons/ai";
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
 
 const ContentTable = () => {
+  const [order, setOrder] = useState(false);
   const history = useHistory();
   const { db } = useSelector((state) => state.Users);
 
@@ -35,8 +40,8 @@ const ContentTable = () => {
       <TableList>
         <div className="list">
           <ul>
-            <li>
-              <MdFormatListNumbered />
+            <li onClick={() => setOrder(!order)} className="filter-btn">
+              {order ? <AiOutlineArrowUp /> : <AiOutlineArrowDown />}
               ID
             </li>
             <li>
@@ -60,7 +65,7 @@ const ContentTable = () => {
               Ações
             </li>
           </ul>
-          {db.map(renderUsersList)}
+          {order ? db.map(renderUsersList).reverse() : db.map(renderUsersList)}
         </div>
       </TableList>
     </>

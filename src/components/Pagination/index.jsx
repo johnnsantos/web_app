@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Commander } from "./style";
 import { useDispatch } from "react-redux";
 import { handleUsersThunk } from "../../store/modules/infoUsers/thunks";
 import { handlePageThunk } from "../../store/modules/pagination/thunks";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 const Pagination = () => {
   const page = useSelector((state) => state.getPage);
@@ -30,10 +32,12 @@ const Pagination = () => {
     <>
       <Commander>
         <button onClick={prevPage} className={`${page === 1 && `disable`}`}>
+          <FaArrowCircleLeft />
           Página anterior
         </button>
         <button onClick={nextPage} className={`${page === 4 && `disable`}`}>
           Próxima página
+          <FaArrowCircleRight />
         </button>
       </Commander>
     </>

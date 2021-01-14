@@ -1,9 +1,11 @@
 import UndefinedAvatar from "../../img/undefined_avatar.png";
 import { MainCard } from "./style";
-import { AiOutlineMail } from "react-icons/ai";
-import { AiOutlineFieldNumber } from "react-icons/ai";
+import {
+  AiOutlineMail,
+  AiOutlineFieldNumber,
+  AiOutlinePhone,
+} from "react-icons/ai";
 import { GrLocation } from "react-icons/gr";
-import { AiOutlinePhone } from "react-icons/ai";
 import { FaInternetExplorer } from "react-icons/fa";
 import { IoBusinessOutline } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";
