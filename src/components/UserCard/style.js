@@ -4,6 +4,7 @@ export const MainCard = styled.div`
   font-family: "Courier New", Courier, monospace;
   background-color: #f1f1f1;
   width: 60%;
+  max-width: 800px;
   border-radius: 10px;
   box-shadow: 1px 1px 15px #d3d3d3;
 
@@ -42,6 +43,11 @@ export const MainCard = styled.div`
       margin-right: 10px;
       font-size: 1.2rem;
     }
+  }
+
+  .map-content {
+    width: 80%;
+    margin: 25px auto 25px;
   }
 
   @media only screen and (max-width: 768px) {

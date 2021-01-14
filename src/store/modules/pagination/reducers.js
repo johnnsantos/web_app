@@ -2,7 +2,7 @@ import { pages } from "./types";
 
 const defaultState = 1;
 
-const getPage = (state = defaultState, action) => {
+const GetPage = (state = defaultState, action) => {
   switch (action.type) {
     case pages:
       return state + action.page;
@@ -12,4 +12,4 @@ const getPage = (state = defaultState, action) => {
   }
 };
 
-export default getPage;
+export default GetPage;

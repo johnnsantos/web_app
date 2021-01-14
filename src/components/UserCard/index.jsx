@@ -11,6 +11,8 @@ import { IoBusinessOutline } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+
 const UserCard = () => {
   const history = useHistory();
   const user = useSelector((state) => state.GetUser);
@@ -61,6 +63,35 @@ const UserCard = () => {
                 Empresa: {company?.name}
               </li>
             </ul>
+          </div>
+          <div className="map-content">
+            {!isNaN(parseFloat(address?.geo.lat)) &&
+              !isNaN(parseFloat(address?.geo.lng)) && (
+                <>
+                  <MapContainer
+                    center={[
+                      parseFloat(address?.geo.lat),
+                      parseFloat(address?.geo.lng),
+                    ]}
+                    zoom={1}
+                    scrollWheelZoom={false}
+                    style={{ width: "100%", height: "35vh" }}
+                  >
+                    <TileLayer
+                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker
+                      position={[
+                        parseFloat(address?.geo.lat),
+                        parseFloat(address?.geo.lng),
+                      ]}
+                    >
+                      <Popup>{name}</Popup>
+                    </Marker>
+                  </MapContainer>
+                </>
+              )}
           </div>
         </>
       )}
